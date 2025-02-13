@@ -1,5 +1,4 @@
 import React from "react";
-import "./ItemList.css";
 import SingleItem from "./SingleItem";
 import { Link, useLocation } from "react-router-dom";
 

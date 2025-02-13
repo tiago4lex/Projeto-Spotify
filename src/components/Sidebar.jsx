@@ -1,5 +1,4 @@
 import React from "react";
-import "./Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,

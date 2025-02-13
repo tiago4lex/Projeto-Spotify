@@ -1,5 +1,4 @@
 import React from "react";
-import "./SongList.css";
 import SongItem from "./SongItem";
 
 const SongList = () => {

@@ -1,5 +1,4 @@
 import React from 'react'
-import './HeaderNav.css'
 import search from '../assets/icons/search.png'
 import arrowLeft from '../assets/icons/small-left.png'
 import arrowRight from '../assets/icons/small-right.png'

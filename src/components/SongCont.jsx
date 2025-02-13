@@ -1,5 +1,4 @@
 import React from "react";
-import "./SongCont.css";
 import Player from "./Player";
 
 const SongCont = () => {
@@ -16,14 +15,16 @@ const SongCont = () => {
       <div className="song__bar">
         <div className="song__artist-image">
           <img
+            width={75}
+            height={75}
             src="https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4"
             alt="Imagem do Artista X"
           />
         </div>
         <Player />
         <div>
-            <p>Última Saudade - Ao Vivo</p>
-            <p>Henrique & Juliano</p>   
+          <p>Última Saudade - Ao Vivo</p>
+          <p>Henrique & Juliano</p>
         </div>
       </div>
     </div>

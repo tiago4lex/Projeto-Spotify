@@ -64,6 +64,7 @@ img {
 .sidebar-container {
   display: flex;
   height: 100vh;
+  flex: 1;
 }
 
 /* HEADER */
@@ -85,6 +86,8 @@ img {
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100vh;
+  overflow: auto;
   height: fit-content;
 }
 
@@ -93,7 +96,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
   margin: 0 10px 10px 10px;
   border-radius: 8px;
   background-color: #121212;
@@ -541,11 +543,9 @@ img {
   .artist__title {
     font-size: 36px;
   }
-
   .artist__header {
     padding: 16px;
   }
-
   .artist__body {
     padding: 25px 16px;
     gap: 16px;
@@ -553,10 +553,6 @@ img {
 }
 
 .single-item__icon--artist {
-  position: fixed;
-  opacity: 1;
-  right: 25px;
-  bottom: 25px;
   position: absolute;
   font-size: 50px;
   right: 7.5px;
@@ -567,13 +563,14 @@ img {
 /* SONG */
 
 .song {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-rows: 1fr auto;
   flex: 1;
 }
 
 .song__container {
-  margin: 0 20px;
+  margin: 0 10px;
   border-top-right-radius: 15px;
   background-image: linear-gradient(
     to bottom,
