@@ -1,8 +1,9 @@
 import React from 'react'
+import ArtistCont from '../components/ArtistCont'
 
 const Artist = () => {
   return (
-    <div>Artist</div>
+    <ArtistCont />
   )
 }
 

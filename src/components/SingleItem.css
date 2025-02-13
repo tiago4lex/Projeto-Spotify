@@ -51,14 +51,6 @@
   transition-property: opacity, transform;
 }
 
-.single-item__icon--artist {
-  position: fixed;
-  opacity: 1;
-  transform: translateY(0);
-  right: 25px;
-  bottom: 25px;
-}
-
 .single-item__title {
   font-weight: 600;
 }
