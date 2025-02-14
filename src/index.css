@@ -501,6 +501,8 @@ img {
   border-radius: var(--border-radius-l);
   margin: 0 10px 10px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .artist__header {
@@ -581,7 +583,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px;
+  padding: 145PX;
 }
 
 .song__image-container {
