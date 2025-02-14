@@ -122,3 +122,5 @@ export const artistArray = [
     banner: "https://i.scdn.co/image/ab676186000010169415572375bac1960f9de7e5",
   },
 ];
+
+export default artistArray;

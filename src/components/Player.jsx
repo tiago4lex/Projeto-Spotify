@@ -16,7 +16,7 @@ const Player = ({ duration, randomIdFromArtist, randomId2FromArtist }) => {
         </Link>
 
         <FontAwesomeIcon
-          className="player_icon player_icon--play"
+          className="player__icon player__icon--play"
           icon={faCirclePlay}
         />
 

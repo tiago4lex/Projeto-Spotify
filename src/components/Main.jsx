@@ -3,33 +3,42 @@ import ItemList from "./ItemList";
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
 
-const Main = ({ type }) => {
+const Main = ({ type, searchResults }) => {
   return (
     <div className="main">
-      {/* Item List de Artistas */}
-      {type === "artists" || type === undefined ? (
+      {/* Se houver pesquisa, exibir os resultados filtrados */}
+      {searchResults && searchResults.length > 0 ? (
         <ItemList
-          title="Artistas"
-          items={10}
-          itemsArray={artistArray}
-          path="/artists"
-          idPath="/artist"
+          title="Resultados da Pesquisa"
+          items={searchResults.length}
+          itemsArray={searchResults}
+          path="/search"
+          idPath="/item"
         />
       ) : (
-        <></>
-      )}
+        <>
+          {/* Item List de Artistas */}
+          {(type === "artists" || type === undefined) && (
+            <ItemList
+              title="Artistas Populares"
+              items={10}
+              itemsArray={artistArray}
+              path="/artists"
+              idPath="/artist"
+            />
+          )}
 
-      {/* Item List de Músicas */}
-      {type === "songs" || type === undefined ? (
-        <ItemList
-          title="Músicas"
-          items={20}
-          itemsArray={songsArray}
-          path="/songs"
-          idPath="/song"
-        />
-      ) : (
-        <></>
+          {/* Item List de Músicas */}
+          {(type === "songs" || type === undefined) && (
+            <ItemList
+              title="Músicas Populares"
+              items={20}
+              itemsArray={songsArray}
+              path="/songs"
+              idPath="/song"
+            />
+          )}
+        </>
       )}
     </div>
   );

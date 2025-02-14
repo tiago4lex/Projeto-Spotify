@@ -780,3 +780,27 @@ img {
     grid-column: 1 / span 2;
   }
 }
+
+/* SEARCH */
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Ajuste para cada item da lista de resultados */
+.search-results .single-item {
+  background-color: #282828;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.search-results .single-item:hover {
+  transform: scale(1.05);
+  background-color: #1db954; /* Cor destaque */
+}
