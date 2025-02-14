@@ -788,6 +788,7 @@ img {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  background-color: #000;
 }
 
 /* Ajuste para cada item da lista de resultados */
