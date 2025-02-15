@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { songsArray } from "../assets/database/songs";
 import { artistArray } from "../assets/database/artists";
 
-const Song = () => {
+const SongCont = () => {
   const { id } = useParams();
   // console.log(id);
 
@@ -67,4 +67,4 @@ const Song = () => {
   );
 };
 
-export default Song;
+export default SongCont;

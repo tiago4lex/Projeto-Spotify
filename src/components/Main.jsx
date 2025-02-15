@@ -2,8 +2,16 @@ import React from "react";
 import ItemList from "./ItemList";
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
+import { useLocation } from "react-router-dom";
 
 const Main = ({ type, searchResults }) => {
+  const location = useLocation();
+
+  // Exibir o Main apenas na rota inicial "/"
+  if (location.pathname !== "/") {
+    return null;
+  }
+
   return (
     <div className="main">
       {/* Se houver pesquisa, exibir os resultados filtrados */}

@@ -6,21 +6,34 @@ import SongList from "../components/SongList";
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
 
-const Artist = () => {
+const ArtistCont = () => {
   const { id } = useParams();
 
-  const { name, banner } = artistArray.filter(
-    (currentArtistObj) => currentArtistObj.id === Number(id)
-  )[0];
+  // Encontrar artista pelo ID
+  const artist = artistArray.find((artist) => artist.id === Number(id));
 
+  // Se o artista não for encontrado, exibir uma mensagem ou redirecionar
+  if (!artist) {
+    return (
+      <div className="artist">
+        <h2>Artista não encontrado</h2>
+      </div>
+    );
+  }
+
+  const { name, banner } = artist;
+
+  // Filtrar as músicas do artista
   const songsArrayFromArtist = songsArray.filter(
-    (currentSongObj) => currentSongObj.artist === name
+    (song) => song.artist === name
   );
 
-  const randomIndex = Math.floor(
-    Math.random() * (songsArrayFromArtist.length - 1)
-  );
-  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
+  // Gerar um ID aleatório apenas se houver músicas
+  const randomSong = songsArrayFromArtist.length
+    ? songsArrayFromArtist[
+        Math.floor(Math.random() * songsArrayFromArtist.length)
+      ]
+    : null;
 
   return (
     <div className="artist">
@@ -35,18 +48,23 @@ const Artist = () => {
 
       <div className="artist__body">
         <h2>Populares</h2>
-
-        <SongList songsArray={songsArrayFromArtist} />
+        {songsArrayFromArtist.length ? (
+          <SongList songsArray={songsArrayFromArtist} />
+        ) : (
+          <p>Este artista ainda não tem músicas cadastradas.</p>
+        )}
       </div>
 
-      <Link to={`/song/${randomIdFromArtist}`}>
-        <FontAwesomeIcon
-          className="single-item__icon single-item__icon--artist"
-          icon={faCirclePlay}
-        />
-      </Link>
+      {randomSong && (
+        <Link to={`/song/${randomSong.id}`}>
+          <FontAwesomeIcon
+            className="single-item__icon single-item__icon--artist"
+            icon={faCirclePlay}
+          />
+        </Link>
+      )}
     </div>
   );
 };
 
-export default Artist;
+export default ArtistCont;
