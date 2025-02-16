@@ -1,0 +1,8 @@
+node_modules
+
+# Arquivos de ambiente (NÃO versionar credenciais!)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
