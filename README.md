@@ -22,6 +22,11 @@ npm install
 npm run dev
 ```
 
+### 2️⃣ Iniciar o back-end  
+```sh
+node ./api/server.js
+```
+
 ## 🔧 Configuração do Banco de Dados  
 
 Antes de rodar o backend, **configure o usuário e a senha do MongoDB** no arquivo `connect.js`.  
